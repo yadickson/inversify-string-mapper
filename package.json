@@ -7,8 +7,16 @@
     "files": [
         "dist"
     ],
-    "author": "Yadickson Soto <yadickson@gmail.com>",
-    "license": "GPL-3.0-only",
+    "author": {
+        "name": "Yadickson Soto",
+        "email": "yadickson@gmail.com",
+        "url": "https://github.com/yadickson/inversify-string-mapper"
+    },
+    "license": "GPL-3.0",
+    "repository": "https://github.com/yadickson/inversify-string-mapper.git",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "test": "mkdirp ./reports && mocha --reporter mocha-multi-reporters --reporter-options configFile=.mocharc.json",
         "test:coverage": "nyc mocha --config .mocharc.json",
