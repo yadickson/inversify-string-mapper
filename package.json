@@ -13,7 +13,9 @@
         "url": "https://github.com/yadickson/inversify-string-mapper"
     },
     "license": "GPL-3.0",
-    "repository": "https://github.com/yadickson/inversify-string-mapper.git",
+    "repository": {
+        "url": "git+https://github.com/yadickson/inversify-string-mapper.git"
+    },
     "publishConfig": {
         "access": "public"
     },
