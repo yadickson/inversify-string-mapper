@@ -12,13 +12,13 @@ describe("StringMapper tests", () => {
   });
 
   it("should return empty when input is null", () => {
-    const result = mapper.execute(null);
+    const result = mapper.mapper(null);
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(empty);
   });
 
   it("should return empty when input is undefined", () => {
-    const result = mapper.execute(undefined);
+    const result = mapper.mapper(undefined);
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(empty);
   });
@@ -27,7 +27,7 @@ describe("StringMapper tests", () => {
     const value = faker.string.uuid();
     const notTrimValue = ` ${value} `;
 
-    const result = mapper.execute(notTrimValue);
+    const result = mapper.mapper(notTrimValue);
 
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(value);
@@ -35,22 +35,29 @@ describe("StringMapper tests", () => {
 
   it("should return the same input value", () => {
     const value = faker.string.uuid();
-    const result = mapper.execute(value);
+    const result = mapper.mapper(value);
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(value);
   });
 
   it("should return empty when input is a number", () => {
-    const value = faker.datatype.number();
-    const result = mapper.execute(value);
+    const value = faker.number.int();
+    const result = mapper.mapper(value);
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(`${value}`);
   });
 
   it("should return empty when input is a object", () => {
     const value = JSON.parse("{}") as object;
-    const result = mapper.execute(value);
+    const result = mapper.mapper(value);
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(empty);
+  });
+
+  it("should return the number representation from number input value", () => {
+    const value = faker.number.int({ min: 10, max: 50 });
+    const result = mapper.mapper(value);
+    expect(result).to.be.not.eq(null);
+    expect(result).is.equal(String(value));
   });
 });
