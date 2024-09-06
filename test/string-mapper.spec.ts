@@ -24,7 +24,7 @@ describe("StringMapper tests", () => {
   });
 
   it("should trim input", () => {
-    const value = faker.datatype.uuid();
+    const value = faker.string.uuid();
     const notTrimValue = ` ${value} `;
 
     const result = mapper.execute(notTrimValue);
@@ -34,7 +34,7 @@ describe("StringMapper tests", () => {
   });
 
   it("should return the same input value", () => {
-    const value = faker.datatype.uuid();
+    const value = faker.string.uuid();
     const result = mapper.execute(value);
     expect(result).to.be.not.eq(null);
     expect(result).is.equal(value);
