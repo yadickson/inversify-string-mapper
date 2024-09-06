@@ -1,3 +1,3 @@
 export interface StringMapperInterface {
-  execute(input: unknown, byDefault?: string): string;
+  mapper(input: unknown, byDefault?: string): string;
 }
