@@ -1,6 +1,6 @@
 {
   "reporter": ["html", "lcov", "json", "text", "text-summary", "cobertura"],
-  "report-dir": "./reports/coverage/",
+  "report-dir": "./coverage/",
   "include": [
     "src/*.ts"
   ],
